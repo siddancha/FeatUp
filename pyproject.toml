@@ -1,0 +1,25 @@
+[project]
+name = "FeatUp"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "Siddharth Ancha", email = "sancha@mit.edu"},
+]
+dependencies = []
+requires-python = ">=3.10"
+readme = "README.md"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["pdm-backend", "wheel"]
+build-backend = "pdm.backend"
+
+[tool.pdm]
+
+# no-isolation since dependencies build PyTorch CUDA extensions
+[tool.pdm.options]
+add = ["--no-isolation"]
+install = ["--no-isolation"]
+
+[tool.pdm.build]
+run-setuptools = true
